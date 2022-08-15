@@ -1,0 +1,23 @@
+<div class="container mt-5">
+  <h1>Welcome to <strong>countdown</strong></h1>
+  <br>
+
+  <h3>This is your grid</h3>
+
+  <div class="grid">
+    <% @grid.each do |element| %>
+    <div class="grid-element">
+        <%= element %>
+    </div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <h3>Provide your word</h3>
+  <form action="/score">
+    <input type="text" name="word" class= "form-control mt-3" placeholder="Enter your word">
+    <input type="submit" class= "btn btn-primary mt-3">
+    <%= hidden_field_tag :grid, @grid %>
+  </form>
+</div>

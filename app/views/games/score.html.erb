@@ -1,0 +1,21 @@
+
+<div class="container mt-5">
+  <h2>Your word:</h2>
+  <h2 class="grid-element"><%= params[:word] %></h2>
+  <br>
+  <h2>Your grid:</h2>
+    <div class="grid">
+      <% params[:grid].split(' ').each do |element| %>
+      <div>
+          <%= element %>
+      </div>
+      <% end %>
+    </div>
+  <br>
+  <h2>How did you do?</h2>
+  <% if @output_string[0] == "C" %>
+  <h2 class="output-field green" type><%= @output_string %> <%= @score %></h2>
+  <% else %>
+  <h2 class="output-field red" type><%= @output_string %></h2>
+  <% end %>
+</div>

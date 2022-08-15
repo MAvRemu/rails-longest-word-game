@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+ .grid > div, .grid-element {
+  color: white;
+  margin: 5px;
+  font-size: 35px;
+  background-color: blue;
+  padding: 8px 18px;
+  border-radius: 10px;
+}
+
+.grid-element {
+  width: fit-content;
+}
+
+.grid {
+  display: flex;
+ }
+
+.output-field {
+  color: white;
+  margin: 5px;
+  font-size: 35px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.green {
+  background-color: rgb(19, 186, 4);
+}
+
+.red {
+  background-color: rgb(255, 0, 0);
+}
