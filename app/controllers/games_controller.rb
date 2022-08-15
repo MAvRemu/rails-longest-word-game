@@ -10,6 +10,7 @@ class GamesController < ApplicationController
     @grid = params[:grid].split(' ')
     @word = params[:word].split('')
     @output_string = ''
+    @score = session[:score]
 
 
     @word.each do |letter|
@@ -20,12 +21,14 @@ class GamesController < ApplicationController
         url = "https://wagon-dictionary.herokuapp.com/#{params[:word]}"
         word_serialized = URI.open(url).read
         @output_string = 'Correct! Your score is:' if JSON.parse(word_serialized)['found']
-        @score = params[:word].size * 100
+
       else
         @output_string = 'Your word is not within the grid'
       end
     end
 
+    @score += @word.size * 100
+    session[:score] = 0
 
 
     # for each letter in the word, check if it is in the grid, if it is, delete it from the grid
